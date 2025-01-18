@@ -26,7 +26,7 @@ function HeroSection() {
   };
 
   return (
-    <section className="w-full h-1/3 bg-green-500 select-none">
+    <section className="w-full h-fit bg-green-500 select-none">
       <Carousel
         autoPlay={false}
         swipeable={true}
@@ -34,10 +34,18 @@ function HeroSection() {
         showStatus={false}
         renderIndicator={customIndicator}
       >
-        <div className="bg-newsBackground bg-no-repeat bg-cover w-full h-full py-10 flex items-end justify-center">
-          <div className="w-full h-2/5 px-5 flex justify-end items-center">
+        <div className="bg-newsBackground bg-no-repeat bg-cover w-full h-full py-12 flex items-end justify-center">
+          <div className="w-full h-fit px-5 flex flex-col justify-evenly items-end">
             <div className="w-fit pl-2 h-7 border-b">
               <h1 className="text-white font-bold">خلافا للاعتقاد</h1>
+            </div>
+            <div className="h-fit w-full flex justify-between items-center">
+              <button className="bg-[#E64128] rounded-full px-2 text-sm text-white">المزيد</button>
+              <h1 className="text-xs text-right text-white w-5/6">
+                لوريم ايبسوم ليس نصا عشوائيا, بل له جذور في الادب الاتيني
+                الكلاسيكي منذ العام 45 قبل الميلاد, مما يجعله اكثر من 2000 عام
+                في القدم
+              </h1>
             </div>
           </div>
         </div>
