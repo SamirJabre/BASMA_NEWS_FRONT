@@ -41,7 +41,7 @@ function HeroSection() {
             </div>
             <div className="h-fit w-full flex justify-between items-center">
               <button className="bg-[#E64128] rounded-full px-2 text-sm text-white">المزيد</button>
-              <h1 className="text-xs text-right text-white w-5/6">
+              <h1 className="text-xs text-right text-white w-4/5">
                 لوريم ايبسوم ليس نصا عشوائيا, بل له جذور في الادب الاتيني
                 الكلاسيكي منذ العام 45 قبل الميلاد, مما يجعله اكثر من 2000 عام
                 في القدم
