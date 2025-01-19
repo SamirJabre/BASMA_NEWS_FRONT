@@ -26,7 +26,7 @@ function HeroSection() {
   };
 
   return (
-    <section className="w-full h-fit bg-green-500 select-none">
+    <section className="w-full h-fit select-none">
       <Carousel
         autoPlay={false}
         swipeable={true}
