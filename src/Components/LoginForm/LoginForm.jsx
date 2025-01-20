@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import InputField from "../../base/InputField";
 import facebook from "../../Assets/Icons/facebook.png";
 import google from "../../Assets/Icons/google.png";
 import apple from "../../Assets/Icons/apple.png";
 import close from "../../Assets/Icons/close.svg";
+import axios from "axios";
 
 function LoginForm({ closeLoginForm }) {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChangeEmail = (e) => {
+    setFormData({ ...formData, email: e.target.value });
+    console.log(formData);
+  };
+  const handleChangePassword = (e) => {
+    setFormData({ ...formData, password: e.target.value });
+    console.log(formData);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted");
+    axios.post("http://192.168.1.108:8000/api/login", formData).then((res) => {
+      console.log(res.data);
+    });
   };
   return (
     <section className="h-screen w-screen flex pt-20 justify-center bg-transparent fixed top-0 left-0 z-10">
@@ -21,8 +38,16 @@ function LoginForm({ closeLoginForm }) {
           <div className="w-7 h-7"></div>
         </div>
         <form action="submit" onSubmit={handleSubmit}>
-          <InputField placeholder={"البريد الاكتروني"} type={"email"} />
-          <InputField placeholder={"كلمة المرور"} type={"password"} />
+          <InputField
+            placeholder={"البريد الاكتروني"}
+            type={"email"}
+            onchange={handleChangeEmail}
+          />
+          <InputField
+            placeholder={"كلمة المرور"}
+            type={"password"}
+            onchange={handleChangePassword}
+          />
           <button
             type="submit"
             className="w-60 h-10 text-white p text-xl my-3 rounded-full bg-[#34B190]"
