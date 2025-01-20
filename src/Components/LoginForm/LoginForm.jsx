@@ -5,8 +5,11 @@ import google from "../../Assets/Icons/google.png";
 import apple from "../../Assets/Icons/apple.png";
 import close from "../../Assets/Icons/close.svg";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "../../Redux/store";
 
 function LoginForm({ closeLoginForm }) {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -23,9 +26,22 @@ function LoginForm({ closeLoginForm }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://192.168.1.108:8000/api/login", formData).then((res) => {
-      console.log(res.data);
-    });
+    axios
+      .post("http://192.168.1.108:8000/api/login", formData)
+      .then((res) => {
+        console.log(res.data);
+
+        if (res.data.status === "success") {
+          dispatch(loginSuccess({ token: res.data.authorisation.token }));
+          console.log("Login successful");
+          closeLoginForm();
+        } else {
+          console.log("Login failed");
+        }
+      })
+      .catch((error) => {
+        console.error("An error occurred during login:", error);
+      });
   };
   return (
     <section className="h-screen w-screen flex pt-20 justify-center bg-transparent fixed top-0 left-0 z-10">

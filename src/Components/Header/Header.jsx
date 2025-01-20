@@ -3,11 +3,20 @@ import logo from "../../Assets/Images/logo.png";
 import { slide as Menu } from "react-burger-menu";
 import "./Header.css";
 import LoginForm from "../LoginForm/LoginForm";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { logout } from "../../Redux/store";
 
 function Header() {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const token = useSelector((state) => state.auth.token);
   const [showLoginForm, setShowLoginForm] = useState(false);
   const closeLoginForm = () => {
     setShowLoginForm(false);
+  };
+  const logOut = () => {
+    dispatch(logout());
   };
   return (
     <div className="w-full h-14 bg-white flex items-center justify-between px-4">
@@ -18,32 +27,32 @@ function Header() {
           </a>
         </div>
         <div className="w-1/3 h-10 mb-3 border-b border-black">
-          <a id="اخبار" className="menu-item" href="/about">
+          <a id="اخبار" className="menu-item" href="/news">
             اخبار
           </a>
         </div>
         <div className="w-1/3 h-10 mb-3 border-b border-black">
-          <a id="اقتصاد" className="menu-item" href="/contact">
+          <a id="اقتصاد" className="menu-item" href="/finance">
             اقتصاد
           </a>
         </div>
         <div className="w-1/3 h-10 mb-3 border-b border-black">
-          <a id="رياضة" className="menu-item" href="/contact">
+          <a id="رياضة" className="menu-item" href="/sport">
             رياضة
           </a>
         </div>
         <div className="w-1/3 h-10 mb-3 border-b border-black">
-          <a id="ثقافة" className="menu-item" href="/contact">
+          <a id="ثقافة" className="menu-item" href="/culture">
             ثقافة
           </a>
         </div>
         <div className="w-1/3 h-10 mb-3 border-b border-black">
-          <a id="فيديو و صور" className="menu-item" href="/contact">
+          <a id="فيديو و صور" className="menu-item" href="/photosandvideos">
             فيديو و صور
           </a>
         </div>
         <div className="w-1/3 h-10 mb-3 border-b border-black">
-          <a id="اراء" className="menu-item" href="/contact">
+          <a id="اراء" className="menu-item" href="/opinions">
             اراء
           </a>
         </div>
@@ -52,10 +61,15 @@ function Header() {
         </div>
       </Menu>
 
-      <button className="w-fit h-fit" onClick={() => setShowLoginForm(true)}>
-        <h1 className="text-sm font-medium">تسجيل الدخول</h1>
+      <button
+        className="w-fit h-fit"
+        onClick={() =>
+          isLoggedIn === false ? setShowLoginForm(true) : logOut()
+        }
+      >
+        {isLoggedIn ? "تسجيل الخروج" : "تسجيل الدخول"}
       </button>
-      {showLoginForm && <LoginForm closeLoginForm={closeLoginForm}/>}
+      {showLoginForm && <LoginForm closeLoginForm={closeLoginForm} />}
     </div>
   );
 }
