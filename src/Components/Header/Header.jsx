@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../Assets/Images/logo.png";
 import { slide as Menu } from "react-burger-menu";
 import "./Header.css";
+import LoginForm from "../LoginForm/LoginForm";
 
 function Header() {
+  const [showLoginForm, setShowLoginForm] = useState(false);
+  const closeLoginForm = () => {
+    setShowLoginForm(false);
+  };
   return (
     <div className="w-full h-14 bg-white flex items-center justify-between px-4">
       <Menu className="bm-menu">
@@ -47,9 +52,10 @@ function Header() {
         </div>
       </Menu>
 
-      <button className="w-fit h-fit">
+      <button className="w-fit h-fit" onClick={() => setShowLoginForm(true)}>
         <h1 className="text-sm font-medium">تسجيل الدخول</h1>
       </button>
+      {showLoginForm && <LoginForm closeLoginForm={closeLoginForm}/>}
     </div>
   );
 }
