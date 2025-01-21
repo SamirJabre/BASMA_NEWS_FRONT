@@ -24,7 +24,7 @@ function CategoryNews() {
   return (
     <>
       <Header />
-      <article className="w-full h-screen bg-red-300 flex flex-col justify-start items-end p-5">
+      <article className="w-full h-screen flex flex-col justify-start items-end p-5">
         <div
           className="w-full h-fit flex justify-between items-center mb-5"
           onClick={() => navigate("/")}
@@ -35,7 +35,7 @@ function CategoryNews() {
           <h1>اخر الاخبار و التطورات في {data.title}</h1>
         </div>
 
-        <div className="w-fit h-fit mb-5 bg-blue-300">
+        <div className="w-fit h-fit mb-5">
           <img src={data.image} alt="News Image" className="w-full h-full"/>
         </div>
         <p className="text-right">{data.body}
