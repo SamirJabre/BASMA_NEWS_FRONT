@@ -1,7 +1,8 @@
 import React from "react";
-import sport from "../../Assets/Images/828.png";
+import {useNavigate} from 'react-router-dom'
 
 function CategoryBox({ category }) {
+  const navigate = useNavigate();
   return (
     <div className=" w-40 h-60 rounded">
       <div className="w-full h-36">
@@ -12,7 +13,7 @@ function CategoryBox({ category }) {
         />
       </div>
       <div className="w-full h-1/5 flex justify-between items-center px-4 border-x-2 border-b-2 rounded-b">
-        <button className="rounded-full px-2 py-1 text-white bg-[#34B190] text-xs text-center">
+        <button className="rounded-full px-2 py-1 text-white bg-[#34B190] text-xs text-center" onClick={()=>navigate(`/category/${category.id}`)}>
           المزيد
         </button>
         <h1 className="font-semibold text-xl text-[#EA543F]">
