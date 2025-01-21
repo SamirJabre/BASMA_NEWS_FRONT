@@ -4,6 +4,7 @@ import HeroSection from "../../Components/HeroSection/HeroSection";
 import NewsCategories from "../../Components/NewsCatergories/NewsCategories";
 import LoginForm from "../../Components/LoginForm/LoginForm";
 import Passion from "../../Components/Passion/Passion";
+import MostRead from "../../Components/MostRead/MostRead";
 
 function LandingPage() {
   return (
@@ -31,6 +32,7 @@ function LandingPage() {
           margin: "25px auto",
         }}
       />
+      <MostRead />
     </div>
   );
 }
