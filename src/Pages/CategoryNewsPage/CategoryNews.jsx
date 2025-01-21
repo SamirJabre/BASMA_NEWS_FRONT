@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../Components/Header/Header";
 import back from "../../Assets/Icons/back-arrow.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 function CategoryNews() {
+  const { id } = useParams();
   const [data, setData] = useState([
     {
       title: "",
@@ -15,7 +16,7 @@ function CategoryNews() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://192.168.1.108:8000/api/get_category/1").then((res) => {
+    axios.get(`http://192.168.1.108:8000/api/get_category/${id}`).then((res) => {
       setData({...data, title: res.data.title, image: res.data.image, body: res.data.body});
       console.log(res.data);
     });
