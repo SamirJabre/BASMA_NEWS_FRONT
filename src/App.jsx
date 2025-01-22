@@ -5,12 +5,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
+    <div className="h-fit w-fit sm:bg-background sm:px-20 sm:py-12 bg-contain ">
+      <BrowserRouter>
       <Routes>
         <Route index element={<LandingPage/>} />
         <Route path="/category/:id" element={<CategoryNews/>} />
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 

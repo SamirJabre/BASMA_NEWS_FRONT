@@ -2,17 +2,15 @@ import React, { useState } from "react";
 import Header from "../../Components/Header/Header";
 import HeroSection from "../../Components/HeroSection/HeroSection";
 import NewsCategories from "../../Components/NewsCatergories/NewsCategories";
-import LoginForm from "../../Components/LoginForm/LoginForm";
 import Passion from "../../Components/Passion/Passion";
 import MostRead from "../../Components/MostRead/MostRead";
 import Footer from "../../Components/Footer/Footer";
 
 function LandingPage() {
   return (
-    <div className="h-screen w-screen">
+    <div className="h-full w-fit sm:bg-white sm:px-20 sm:rounded-xl">
       <Header />
       <HeroSection />
-
       <NewsCategories />
       <hr
         style={{

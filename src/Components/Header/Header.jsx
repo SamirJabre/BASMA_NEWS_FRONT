@@ -8,6 +8,11 @@ import { useSelector } from "react-redux";
 import { logout } from "../../Redux/store";
 
 function Header() {
+  const [width , setWidth] = useState(window.innerWidth);
+  window.addEventListener("resize", () => {
+    setWidth(window.innerWidth);
+  });
+  
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const token = useSelector((state) => state.auth.token);
@@ -19,8 +24,10 @@ function Header() {
     dispatch(logout());
   };
   return (
-    <div className="w-full h-14 bg-white flex items-center justify-between px-4 shadow-lg">
-      <Menu className="bm-menu">
+    <div className="w-full h-14 bg-white flex items-center justify-between px-4 shadow-lg sm:bg-pink-500 sm:px-20">
+      {
+        width < 640 && (
+          <Menu className="bm-menu">
         <div className="w-1/3 h-10 mb-3 border-b border-black">
           <a id="الرئيسية" className="menu-item" href="/">
             الرئيسية
@@ -60,6 +67,8 @@ function Header() {
           <img src={logo} alt="Logo Image" className="w-full h-full" />
         </div>
       </Menu>
+        )
+      }
 
       <button
         className="w-fit h-fit"

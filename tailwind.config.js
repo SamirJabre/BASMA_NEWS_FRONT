@@ -5,6 +5,7 @@ export default {
     extend: {
       backgroundImage: {
         'richMan':"url('./src/Assets/Images/richman.png')",
+        'background':"url('./src/Assets/Images/background.png')",
         'banner':"url('./src/Assets/Images/Banner.png')",
         'newsBackground': "url('./src/Assets/Images/NewsBack.jpg')",
       }
