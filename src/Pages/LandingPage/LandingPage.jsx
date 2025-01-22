@@ -40,10 +40,10 @@ function LandingPage() {
           opacity: "0.3",
           height: "2px",
           width: "90%",
-          margin: "25px auto",
+          margin: "0px auto 25px auto",
         }}
       />
-      <Footer/>
+      <Footer />
     </div>
   );
 }

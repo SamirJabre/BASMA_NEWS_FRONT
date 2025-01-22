@@ -19,7 +19,7 @@ function Header() {
     dispatch(logout());
   };
   return (
-    <div className="w-full h-14 bg-white flex items-center justify-between px-4">
+    <div className="w-full h-14 bg-white flex items-center justify-between px-4 shadow-lg">
       <Menu className="bm-menu">
         <div className="w-1/3 h-10 mb-3 border-b border-black">
           <a id="الرئيسية" className="menu-item" href="/">

@@ -15,26 +15,27 @@ function Footer() {
   return (
     <footer className="w-full h-32 flex flex-col bg-[#E2E2E2] justify-evenly items-center">
       {isLoggedIn ? null : (
-        <div className="w-3/6 h-10 rounded-full flex justify-between items-center">
+        <div className="w-5/6 h-10 rounded-full flex justify-between items-center">
           <input
             type="email"
-            className="w-[70%] h-full rounded-l-full px-2 text-right outline-none"
+            className="w-[70%] h-full rounded-l-full px-2 text-sm text-right outline-none"
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <button
-            onClick={() => setShowRegisterForm(true)}
+            onClick={() => email && setShowRegisterForm(true)}
             className="flex justify-center items-center h-full w-[30%] bg-[#E74127] rounded-r-full text-white"
           >
             الاشتراك
           </button>
         </div>
       )}
-      <div className="w-3/6 h-10 flex justify-between items-center">
+      <div className="w-5/6 h-10 flex justify-between items-center">
         <div className="w-10 h-10 rounded-full bg-[#35B091]">
           <img
             src={twitter}
             alt="Twitter Icon"
-            className="w-full h-full scale-90"
+            className="w-full h-full scale-75"
           />
         </div>
         <div className="w-10 h-10 rounded-full bg-[#35B091]">

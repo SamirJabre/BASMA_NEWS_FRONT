@@ -49,7 +49,7 @@ function RegisterForm({ closeRegisterForm, email }) {
       });
   };
   return (
-    <section className="h-screen w-screen flex pt-20 justify-center bg-transparent fixed top-0 left-0 z-10">
+    <section className="h-screen w-screen flex pt-10 justify-center bg-black bg-opacity-70 fixed top-0 left-0 z-10">
       <div className="w-72 h-fit bg-white flex flex-col justify-start py-5 items-center rounded-md">
         <div className="w-60 h-10 flex justify-between items-center mb-5">
           <div className="w-7 h-7" onClick={closeRegisterForm}>
