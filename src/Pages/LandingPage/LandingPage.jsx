@@ -8,7 +8,7 @@ import Footer from "../../Components/Footer/Footer";
 
 function LandingPage() {
   return (
-    <div className="h-full w-fit sm:bg-white sm:px-20 sm:rounded-xl">
+    <div className="h-full w-fit sm:bg-white sm:px-28 sm:rounded-xl">
       <Header />
       <HeroSection />
       <NewsCategories />

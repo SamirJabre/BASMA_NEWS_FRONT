@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="h-fit w-fit sm:bg-background sm:px-20 sm:py-12 bg-contain ">
+    <div className="min-h-screen min-w-full sm:bg-background sm:px-28 sm:py-16 bg-contain flex justify-center items-center">
       <BrowserRouter>
       <Routes>
         <Route index element={<LandingPage/>} />

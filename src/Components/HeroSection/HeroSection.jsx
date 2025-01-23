@@ -2,6 +2,7 @@ import React from "react";
 import newsBackground from "../../Assets/Images/NewsBack.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import Navbar from "../Navbar/Navbar";
 
 function HeroSection() {
   const customIndicator = (onClickHandler, isSelected, index, label) => {
@@ -34,13 +35,16 @@ function HeroSection() {
         showStatus={false}
         renderIndicator={customIndicator}
       >
-        <div className="bg-newsBackground bg-no-repeat bg-cover w-full h-full py-12 flex items-end justify-center">
+        <div className="bg-newsBackground bg-no-repeat bg-cover w-full h-full py-12 flex items-end justify-center sm:flex sm:flex-col sm:items-center sm:justify-between sm:py-0">
+          <Navbar />
           <div className="w-full h-fit px-5 flex flex-col justify-evenly items-end">
             <div className="w-fit pl-2 h-7 border-b">
               <h1 className="text-white font-bold">خلافا للاعتقاد</h1>
             </div>
             <div className="h-fit w-full flex justify-between items-center">
-              <button className="bg-[#E64128] rounded-full px-2 text-sm text-white">المزيد</button>
+              <button className="bg-[#E64128] rounded-full px-2 text-sm text-white">
+                المزيد
+              </button>
               <h1 className="text-xs text-right text-white w-4/5">
                 لوريم ايبسوم ليس نصا عشوائيا, بل له جذور في الادب الاتيني
                 الكلاسيكي منذ العام 45 قبل الميلاد, مما يجعله اكثر من 2000 عام
