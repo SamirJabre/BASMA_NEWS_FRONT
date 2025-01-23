@@ -14,10 +14,20 @@ function NewsCategories() {
   }, []);
 
   return (
-    <section className="w-full h-fit flex justify-evenly items-center flex-wrap">
-      {categories.map((category) => {
-        return <CategoryBox key={category.id} category={category} />;
-      })}
+    <section className="w-full h-fit flex justify-evenly items-center flex-wrap md:grid md:grid-cols-3 md:grid-rows-2 md:mt-5 md:gap-10">
+      {categories.map((category, index) => (
+        <div
+          key={category.id}
+          className={`md:w-full md:h-full md:flex md:justify-center ${
+            index === 2 ? "row-span-2 col-start-3" : ""
+          }`}
+        >
+          <CategoryBox
+            category={category}
+            third_child={index === categories.length - 3}
+          />
+        </div>
+      ))}
     </section>
   );
 }
