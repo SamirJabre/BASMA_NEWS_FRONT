@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import newsBackground from "../../Assets/Images/NewsBack.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import Navbar from "../Navbar/Navbar";
 
 function HeroSection() {
+  const [width, setWidth] = useState(window.innerWidth);
+  window.addEventListener("resize", () => {
+    setWidth(window.innerWidth);
+  });
   const customIndicator = (onClickHandler, isSelected, index, label) => {
     return (
       <li
@@ -36,7 +40,11 @@ function HeroSection() {
         renderIndicator={customIndicator}
       >
         <div className="bg-newsBackground bg-no-repeat bg-cover w-full h-full py-12 flex items-end justify-center sm:flex sm:flex-col sm:items-center sm:justify-between sm:py-0">
-          <Navbar />
+          {
+            width > 640 && (
+              <Navbar />
+            )
+          }
           <div className="w-full h-fit px-5 flex flex-col justify-evenly items-end">
             <div className="w-fit pl-2 h-7 border-b">
               <h1 className="text-white font-bold">خلافا للاعتقاد</h1>
