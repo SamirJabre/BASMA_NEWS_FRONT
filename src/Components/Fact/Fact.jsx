@@ -5,7 +5,7 @@ import minus from "../../Assets/Icons/minus.png";
 function Fact() {
   const [factShown, setFactShown] = useState(false);
   return (
-    <div className="w-11/12 h-fit flex flex-col justify-between items-center mb-[25px] border rounded-lg">
+    <div className="w-11/12 lg:w-full xl:w-11/12 h-fit flex flex-col justify-between items-center mb-[25px] border rounded-lg">
       <div className="w-full h-12 flex items-center justify-end">
         <div
           className={`w-full h-full flex justify-end items-center pr-5 ${
