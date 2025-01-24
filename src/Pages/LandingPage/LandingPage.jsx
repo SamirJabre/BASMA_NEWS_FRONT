@@ -5,6 +5,7 @@ import NewsCategories from "../../Components/NewsCatergories/NewsCategories";
 import Passion from "../../Components/Passion/Passion";
 import MostRead from "../../Components/MostRead/MostRead";
 import Footer from "../../Components/Footer/Footer";
+import Copyright from "../../Components/Copyright/Copyright";
 
 function LandingPage() {
   return (
@@ -45,6 +46,7 @@ function LandingPage() {
         }}
       />
       <Footer />
+      <Copyright/>
     </div>
   );
 }
