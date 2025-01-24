@@ -28,12 +28,12 @@ function CategoryBox({ category, third_child }) {
       </div>
       <div className={`w-full h-12 flex justify-between items-center px-4 border-x-2 border-b-2 rounded-b md:rounded-b-lg md:h-[100px] md:flex-col-reverse md:items-end md:justify-evenly`}>
         <button
-          className="rounded-full px-2 py-1 text-white bg-[#34B190] text-xs text-center font-semibold md:px-3 md:text-base "
+          className="rounded-full px-2 py-1 text-white bg-[#34B190] text-xs text-center font-semibold md:px-3 md:text-xs lg:text-sm 2xl:text-base"
           onClick={handleCategoryClick}
         >
           المزيد
         </button>
-        <h1 className="font-semibold text-base text-[#EA543F] md:text-[30px]">
+        <h1 className="font-semibold text-base text-[#EA543F] md:text-lg lg:text-xl xl:tex-2xl 2xl:text-[30px]">
           {category.title}
         </h1>
       </div>
