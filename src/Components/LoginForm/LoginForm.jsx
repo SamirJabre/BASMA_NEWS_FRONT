@@ -44,16 +44,16 @@ function LoginForm({ closeLoginForm }) {
       });
   };
   return (
-    <section className="h-screen w-screen flex pt-20 justify-center bg-transparent fixed top-0 left-0 z-10">
-      <div className="w-72 h-fit bg-white flex flex-col justify-start py-5 items-center rounded-md">
-        <div className="w-60 h-10 flex justify-between items-center mb-5">
-          <div className="w-7 h-7" onClick={closeLoginForm}>
+    <section className="h-screen w-screen flex justify-center items-center bg-black bg-opacity-70 fixed top-0 left-0 z-10">
+      <div className="w-72 h-fit bg-white flex flex-col justify-start py-5 items-center rounded-md xl:w-1/4">
+        <div className="w-60 h-10 flex justify-between items-center mb-5 xl:w-full xl:px-5">
+          <button className="w-7 h-7" onClick={closeLoginForm}>
             <img src={close} alt="Close Icon" className="h-full w-full" />
-          </div>
+          </button>
           <h1 className="text-xl underline underline-offset-8">تسجيل الدخول</h1>
           <div className="w-7 h-7"></div>
         </div>
-        <form action="submit" onSubmit={handleSubmit}>
+        <form action="submit" onSubmit={handleSubmit} className="xl:w-full xl:px-5">
           <InputField
             placeholder={"البريد الاكتروني"}
             type={"email"}
@@ -66,7 +66,7 @@ function LoginForm({ closeLoginForm }) {
           />
           <button
             type="submit"
-            className="w-60 h-10 text-white p text-xl my-3 rounded-full bg-[#34B190]"
+            className="w-60 h-10 text-white p text-xl my-3 rounded-full bg-[#34B190] xl:w-full"
           >
             تسجيل{" "}
           </button>

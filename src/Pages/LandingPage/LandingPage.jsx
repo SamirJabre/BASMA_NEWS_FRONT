@@ -18,7 +18,7 @@ function LandingPage() {
           backgroundColor: "gray",
           opacity: "0.3",
           height: "2px",
-          width: "90%",
+          width: "100%",
           margin: "25px auto",
         }}
       />
@@ -30,7 +30,7 @@ function LandingPage() {
           backgroundColor: "gray",
           opacity: "0.3",
           height: "2px",
-          width: "90%",
+          width: "100%",
           margin: "25px auto",
         }}
       />
@@ -42,7 +42,7 @@ function LandingPage() {
           backgroundColor: "gray",
           opacity: "0.3",
           height: "2px",
-          width: "90%",
+          width: "100%",
         }}
       />
       <Footer />
