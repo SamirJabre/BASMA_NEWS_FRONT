@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
+        'richManEng':"url('./src/Assets/Images/richManEng.png')",
         'richMan':"url('./src/Assets/Images/richman.png')",
         'background':"url('./src/Assets/Images/background.png')",
         'banner':"url('./src/Assets/Images/Banner.png')",

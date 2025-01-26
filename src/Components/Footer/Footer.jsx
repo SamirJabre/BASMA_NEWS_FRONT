@@ -9,6 +9,7 @@ import FooterList from "../FooterList/FooterList";
 function Footer() {
   const [showRegisterForm, setShowRegisterForm] = useState(false);
   const [email, setEmail] = useState("");
+  const language = useSelector((state) => state.auth.language);
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const closeRegisterForm = () => {
     setShowRegisterForm(false);
@@ -16,14 +17,14 @@ function Footer() {
   return (
     <footer className="w-full h-32 flex flex-col bg-[#E2E2E2] justify-evenly items-center sm:h-60 sm:pt-10 sm:pb-12 sm:flex-row sm:justify-between sm:items-center ">
       <div className="hidden sm:flex sm:justify-between sm:items-start sm:w-1/2 sm:h-full sm:px-10 ">
-        <FooterList />
-        <FooterList />
-        <FooterList />
+        <FooterList language={language}/>
+        <FooterList language={language}/>
+        <FooterList language={language}/>
       </div>
 
       <div className="w-full h-full sm:flex sm:flex-col sm:justify-between sm:items-end sm:w-1/2 sm:h-full sm:px-10">
         <h1 className="hidden sm:flex text-[#3B3F4A] font-semibold 2xl:text-2xl xl:text-xl">
-          مشاهدة على تويتر
+          {language === "en" ? "Watch on Twitter" : "مشاهدة على تويتر"}
         </h1>
         <div className="w-full h-full flex flex-col justify-evenly items-center md:flex-col md:justify-evenly md:items-end xl:flex-row xl:justify-between xl:items-center ">
           {isLoggedIn ? null : (
@@ -38,7 +39,7 @@ function Footer() {
                 onClick={() => email && setShowRegisterForm(true)}
                 className="flex justify-center items-center font-semibold h-full w-[30%] bg-[#E74127] rounded-r-full text-white 2xl:text-lg 2xl:w-[30%] xl:text-base xl:w-[40%] md:text-xs sm:text-[5px]"
               >
-                الاشتراك
+                {language === "en" ? "Subscribe" : "الاشتراك"}
               </button>
             </div>
           )}

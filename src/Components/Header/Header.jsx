@@ -113,6 +113,7 @@ function Header() {
             <select
               name="language"
               onChange={changeLang}
+              value={language}
               className="w-fit h-fit text-center sm:text-lg"
             >
               <option value="ar">العربية</option>
