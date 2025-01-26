@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CategoryBox from "../CategoryBox/CategoryBox";
 import axios from "axios";
-import richman from "../../Assets/Images/richman.png";
 
 function NewsCategories() {
   const [categories, setCategories] = useState([]);

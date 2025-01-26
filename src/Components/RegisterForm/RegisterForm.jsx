@@ -5,10 +5,11 @@ import google from "../../Assets/Icons/google.png";
 import apple from "../../Assets/Icons/apple.png";
 import close from "../../Assets/Icons/close.svg";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginSuccess } from "../../Redux/store";
 
 function RegisterForm({ closeRegisterForm, email }) {
+  const language = useSelector((state) => state.auth.language);
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: email,
@@ -59,27 +60,30 @@ function RegisterForm({ closeRegisterForm, email }) {
           <div className="w-7 h-7"></div>
         </div>
         <form action="submit" onSubmit={handleSubmit} className="xl:w-full xl:px-5">
-          <InputField
-            placeholder={"البريد الاكتروني"}
+        <InputField
+            placeholder={language === "ar" ? "البريد الالكتروني" : "Email"}
             type={"email"}
-            onchange={handleChangeEmail}
             value={email}
+            onchange={handleChangeEmail}
+            language={language}
           />
           <InputField
-            placeholder={"الاسم"}
+            placeholder={language === "ar" ? "الاسم" : "Name"}
             type={"text"}
             onchange={handleChangeName}
+            language={language}
           />
           <InputField
-            placeholder={"كلمة المرور"}
+            placeholder={language === "ar" ? "كلمة المرور" : "Password"}
             type={"password"}
             onchange={handleChangePassword}
+            language={language}
           />
           <button
             type="submit"
             className="w-60 h-10 text-white p text-xl my-3 rounded-full bg-[#34B190] xl:w-full"
           >
-            اشتراك
+            {language === "ar" ? "انشاء حساب" : "Register"}
           </button>
         </form>
 

@@ -5,10 +5,11 @@ import google from "../../Assets/Icons/google.png";
 import apple from "../../Assets/Icons/apple.png";
 import close from "../../Assets/Icons/close.svg";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginSuccess } from "../../Redux/store";
 
 function LoginForm({ closeLoginForm }) {
+  const language = useSelector((state) => state.auth.language);
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: "",
@@ -50,31 +51,33 @@ function LoginForm({ closeLoginForm }) {
           <button className="w-7 h-7" onClick={closeLoginForm}>
             <img src={close} alt="Close Icon" className="h-full w-full" />
           </button>
-          <h1 className="text-xl underline underline-offset-8">تسجيل الدخول</h1>
+          <h1 className="text-xl underline underline-offset-8">{language === "ar" ? "تسجيل الدخول" : "Login"}</h1>
           <div className="w-7 h-7"></div>
         </div>
         <form action="submit" onSubmit={handleSubmit} className="xl:w-full xl:px-5">
           <InputField
-            placeholder={"البريد الاكتروني"}
+            placeholder={language === "ar" ? "البريد الالكتروني" : "Email"}
             type={"email"}
             onchange={handleChangeEmail}
+            language={language}
           />
           <InputField
-            placeholder={"كلمة المرور"}
+            placeholder={language === "ar" ? "كلمة المرور" : "Password"}
             type={"password"}
             onchange={handleChangePassword}
+            language={language}
           />
           <button
             type="submit"
             className="w-60 h-10 text-white p text-xl my-3 rounded-full bg-[#34B190] xl:w-full"
           >
-            تسجيل{" "}
+            {language === "ar" ? "تسجيل الدخول" : "Login"}
           </button>
         </form>
 
         <div className="h-fit w-60 mb-4 flex items-center">
           <hr className="flex-grow" />
-          <p className="mx-1 ">او</p>
+          <p className="mx-2 ">{language === "ar" ? "أو" : "or"}</p>
           <hr className="flex-grow" />
         </div>
 

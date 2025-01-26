@@ -2,6 +2,7 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 const initialAuthState = {
   isLoggedIn: false,
   token: null,
+  language: "ar",
 };
 const authSlice = createSlice({
   name: "auth",
@@ -15,9 +16,12 @@ const authSlice = createSlice({
       state.isLoggedIn = false;
       state.token = null;
     },
+    changeLanguage(state, action) {
+      state.language = action.payload;
+    },
   },
 });
-export const { loginSuccess, logout } = authSlice.actions;
+export const { loginSuccess, logout, changeLanguage } = authSlice.actions;
 const store = configureStore({
   reducer: {
     auth: authSlice.reducer,
