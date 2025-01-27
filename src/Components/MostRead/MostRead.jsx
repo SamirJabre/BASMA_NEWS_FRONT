@@ -11,6 +11,8 @@ function MostRead() {
       </h1>
       <Fact language={language}/>
       <Fact language={language}/>
+      <Fact language={language}/>
+      <Fact language={language}/>
     </section>
   );
 }

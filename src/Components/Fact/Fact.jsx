@@ -4,11 +4,6 @@ import minus from "../../Assets/Icons/minus.png";
 
 function Fact({ language }) {
   const [factShown, setFactShown] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
   return (
     <div className="w-11/12 lg:w-full xl:w-11/12 h-fit flex flex-col justify-between items-center mb-[25px] border rounded-lg">
       <div
@@ -27,8 +22,8 @@ function Fact({ language }) {
               : ""
           }`}
         >
-          <h1 className={`${factShown ? " text-white" : "text-[#34AF90]"}`}>
-            Click
+          <h1 className={`font-bold ${factShown ? " text-white" : "text-[#34AF90]"}`}>
+            {language === 'en' ? 'Click' : 'انقر'}
           </h1>
         </div>
         <button
@@ -59,7 +54,7 @@ function Fact({ language }) {
       >
         <div className="w-full h-full flex justify-end items-center px-5">
           <p
-            className={`text-[#B0B0B2] text-xs ${
+            className={`text-[#B0B0B2] text-xs font-semibold ${
               language === "ar" ? "text-right" : "text-left"
             }`}
           >

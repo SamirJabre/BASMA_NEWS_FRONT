@@ -70,7 +70,7 @@ function CategoryNews() {
           onClick={() => navigate("/")}
         >
           <button className="w-10 h-10">
-            <img src={back} alt="Back" className="w-full h-full" />
+            <img src={back} alt="Back" className="w-full h-full select-none" />
           </button>
           <h1 className="text-[#30B08F] font-bold text-base 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-base">
             {language === "ar" ? "اخر الاخبار و التطورات" : "Latest News"}
