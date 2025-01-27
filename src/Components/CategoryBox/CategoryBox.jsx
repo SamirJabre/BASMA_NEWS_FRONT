@@ -65,7 +65,7 @@ function CategoryBox({ category, third_child }) {
         >
           {language === "ar" ? "المزيد" : "More"}
         </button>
-        <h1 className="font-cairo font-semibold text-base text-[#EA543F] md:text-lg lg:text-xl xl:tex-2xl 2xl:text-[30px]">
+        <h1 className="font-cairo font-semibold text-sm text-[#EA543F] md:text-lg lg:text-xl xl:tex-2xl 2xl:text-[30px]">
           {language === "ar" ? category.title : translatedTitle}
         </h1>
       </div>
