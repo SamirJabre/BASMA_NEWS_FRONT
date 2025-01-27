@@ -19,20 +19,17 @@ function RegisterForm({ closeRegisterForm, email }) {
 
   const handleChangeEmail = (e) => {
     setFormData({ ...formData, email: e.target.value });
-    console.log(formData);
   };
   const handleChangeName = (e) => {
     setFormData({ ...formData, name: e.target.value });
-    console.log(formData);
   };
   const handleChangePassword = (e) => {
     setFormData({ ...formData, password: e.target.value });
-    console.log(formData);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios
+    await axios
       .post("http://192.168.1.108:8000/api/register", formData)
       .then((res) => {
         console.log(res.data);

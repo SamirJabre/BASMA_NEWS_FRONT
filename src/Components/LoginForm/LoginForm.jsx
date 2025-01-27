@@ -10,6 +10,7 @@ import { loginSuccess } from "../../Redux/store";
 
 function LoginForm({ closeLoginForm }) {
   const language = useSelector((state) => state.auth.language);
+  const [loginFailed, setLoginFailed] = useState(false);
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: "",
@@ -18,30 +19,23 @@ function LoginForm({ closeLoginForm }) {
 
   const handleChangeEmail = (e) => {
     setFormData({ ...formData, email: e.target.value });
-    console.log(formData);
   };
   const handleChangePassword = (e) => {
     setFormData({ ...formData, password: e.target.value });
-    console.log(formData);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios
+    await axios
       .post("http://192.168.1.108:8000/api/login", formData)
       .then((res) => {
-        console.log(res.data);
-
         if (res.data.status === "success") {
           dispatch(loginSuccess({ token: res.data.authorisation.token }));
-          console.log("Login successful");
           closeLoginForm();
-        } else {
-          console.log("Login failed");
         }
       })
       .catch((error) => {
-        console.error("An error occurred during login:", error);
+        setLoginFailed(true);
       });
   };
   return (
@@ -51,10 +45,16 @@ function LoginForm({ closeLoginForm }) {
           <button className="w-7 h-7" onClick={closeLoginForm}>
             <img src={close} alt="Close Icon" className="h-full w-full" />
           </button>
-          <h1 className="text-xl underline underline-offset-8">{language === "ar" ? "تسجيل الدخول" : "Login"}</h1>
+          <h1 className="text-xl underline underline-offset-8">
+            {language === "ar" ? "تسجيل الدخول" : "Login"}
+          </h1>
           <div className="w-7 h-7"></div>
         </div>
-        <form action="submit" onSubmit={handleSubmit} className="xl:w-full xl:px-5">
+        <form
+          action="submit"
+          onSubmit={handleSubmit}
+          className="xl:w-full xl:px-5"
+        >
           <InputField
             placeholder={language === "ar" ? "البريد الالكتروني" : "Email"}
             type={"email"}
@@ -67,6 +67,15 @@ function LoginForm({ closeLoginForm }) {
             onchange={handleChangePassword}
             language={language}
           />
+
+          {loginFailed && (
+            <p className="text-center text-red-500">
+              {language === "ar"
+                ? "تحقق من العلومات"
+                : "verify your credentials"}
+            </p>
+          )}
+
           <button
             type="submit"
             className="w-60 h-10 text-white p text-xl my-3 rounded-full bg-[#34B190] xl:w-full"

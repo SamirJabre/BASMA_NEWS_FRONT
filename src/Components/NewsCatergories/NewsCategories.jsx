@@ -6,10 +6,13 @@ function NewsCategories() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get("http://192.168.1.108:8000/api/get_category").then((Response) => {
-      const data = Response.data;
-      setCategories(data.sort((a, b) => b.clicks - a.clicks));
-    });
+    const fetchCategories = async () => {
+      axios.get("http://192.168.1.108:8000/api/get_category").then((Response) => {
+        const data = Response.data;
+        setCategories(data.sort((a, b) => b.clicks - a.clicks));
+      });
+    }
+    fetchCategories();
   }, []);
 
   return (

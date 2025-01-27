@@ -34,31 +34,31 @@ function CategoryNews() {
         console.log(res.data);
       });
 
-    const data = JSON.stringify({
-      from: "ar",
-      to: "en",
-      q: newsData.body,
-    });
+    // const data = JSON.stringify({
+    //   from: "ar",
+    //   to: "en",
+    //   q: newsData.body,
+    // });
 
-    const options = {
-      method: "POST",
-      url: "https://rapid-translate-multi-traduction.p.rapidapi.com/t",
-      headers: {
-        "x-rapidapi-key": "e6034941d2msh770829ccd669659p140c6ajsn42e79fb66b0d",
-        "x-rapidapi-host": "rapid-translate-multi-traduction.p.rapidapi.com",
-        "Content-Type": "application/json",
-      },
-      data: data,
-    };
+    // const options = {
+    //   method: "POST",
+    //   url: "https://rapid-translate-multi-traduction.p.rapidapi.com/t",
+    //   headers: {
+    //     "x-rapidapi-key": "e6034941d2msh770829ccd669659p140c6ajsn42e79fb66b0d",
+    //     "x-rapidapi-host": "rapid-translate-multi-traduction.p.rapidapi.com",
+    //     "Content-Type": "application/json",
+    //   },
+    //   data: data,
+    // };
 
-    axios
-      .request(options)
-      .then((response) => {
-        setTranslatedTitle(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    // axios
+    //   .request(options)
+    //   .then((response) => {
+    //     setTranslatedTitle(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
   }, []);
 
   return (
