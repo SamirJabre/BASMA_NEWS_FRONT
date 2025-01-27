@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import plus from "../../Assets/Icons/plus.png";
 import minus from "../../Assets/Icons/minus.png";
 
 function Fact({ language }) {
   const [factShown, setFactShown] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
   return (
     <div className="w-11/12 lg:w-full xl:w-11/12 h-fit flex flex-col justify-between items-center mb-[25px] border rounded-lg">
       <div
@@ -45,18 +50,29 @@ function Fact({ language }) {
           />
         </button>
       </div>
-      {factShown && (
-        <div className={`w-full h-fit py-2 flex justify-end items-center rounded-b-lg bg-[#F0F0F0] ${language === "ar" ? "flex-row" : "flex-row-reverse"}`}>
-          <div className="w-full h-full flex justify-end items-center px-5">
-            <p className={`text-[#B0B0B2] text-xs ${language === "ar" ? "text-right" : "text-left"}`}>
-              {language === "ar" ? "قالبنك المركزي من العملات الأجنبيّة يُعتبر تتويجاً لمسار خاضه مصرف لبنان لرفع الاحتياطيات من خلال ضبط السوق أولاً ووقف هدر الأموالعلى الدعم مثلما كان يجري سابق" : "The Central Bank's foreign exchange template is considered a culmination of a path that the Banque du Liban has taken to raise reserves by regulating the market first and stopping the waste of money on support as it was previously."}
-            </p>
-          </div>
-          <div className="h-12 w-12"></div>
+      <div
+        className={`w-full transition-all duration-300 ease-in-out overflow-hidden ${
+          factShown ? "max-h-40 opacity-100 py-2" : "max-h-0 opacity-0"
+        } flex justify-end items-center rounded-b-lg bg-[#F0F0F0] ${
+          language === "ar" ? "flex-row" : "flex-row-reverse"
+        }`}
+      >
+        <div className="w-full h-full flex justify-end items-center px-5">
+          <p
+            className={`text-[#B0B0B2] text-xs ${
+              language === "ar" ? "text-right" : "text-left"
+            }`}
+          >
+            {language === "ar"
+              ? "قالبنك المركزي من العملات الأجنبيّة يُعتبر تتويجاً لمسار خاضه مصرف لبنان لرفع الاحتياطيات من خلال ضبط السوق أولاً ووقف هدر الأموالعلى الدعم مثلما كان يجري سابق"
+              : "The Central Bank's foreign exchange template is considered a culmination of a path that the Banque du Liban has taken to raise reserves by regulating the market first and stopping the waste of money on support as it was previously."}
+          </p>
         </div>
-      )}
+        <div className="h-12 w-12"></div>
+      </div>
     </div>
   );
+  
 }
 
 export default Fact;

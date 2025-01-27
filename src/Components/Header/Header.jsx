@@ -90,7 +90,7 @@ function Header() {
       )}
 
       <button
-        className="w-fit h-fit text-left sm:text-lg sm:font-bold sm:w-32"
+        className="w-fit h-fit text-left sm:text-lg sm:font-bold sm:w-fit relative overflow-hidden group"
         onClick={() =>
           isLoggedIn === false ? setShowLoginForm(true) : logOut()
         }
@@ -102,6 +102,7 @@ function Header() {
           : language === "ar"
           ? "تسجيل الدخول"
           : "Login"}
+          <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-current transition-all duration-300 ease-out group-hover:w-full group-hover:left-0"></span>
       </button>
       {showLoginForm && <LoginForm closeLoginForm={closeLoginForm} />}
       {width > 640 && (

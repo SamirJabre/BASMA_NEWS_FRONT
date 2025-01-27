@@ -37,28 +37,28 @@ function Footer() {
               />
               <button
                 onClick={() => email && setShowRegisterForm(true)}
-                className="flex justify-center items-center font-semibold h-full w-[30%] bg-[#E74127] rounded-r-full text-white 2xl:text-lg 2xl:w-[30%] xl:text-base xl:w-[40%] md:text-xs sm:text-[5px]"
+                className="flex justify-center items-center font-semibold h-full w-[30%] bg-[#E74127] rounded-r-full text-white 2xl:text-lg 2xl:w-[30%] xl:text-base xl:w-[40%] md:text-xs sm:text-[5px] hover:bg-[#3C3E4B]  hover:transition-all duration-200"
               >
                 {language === "en" ? "Subscribe" : "الاشتراك"}
               </button>
             </div>
           )}
           <div className="w-3/5 h-10 flex justify-between items-center xl:w-2/6">
-            <button className="w-10 h-10 2xl:w-10 2xl:h-10 lg:w-8 lg:h-8 sm:w-6 sm:h-6 rounded-full bg-[#35B091]">
+            <button className="w-10 h-10 2xl:w-10 2xl:h-10 lg:w-8 lg:h-8 sm:w-6 sm:h-6 rounded-full bg-[#35B091] hover:bg-[#3C3E4B] hover:scale-110 hover:transition-all">
               <img
                 src={twitter}
                 alt="Twitter Icon"
                 className="w-full h-full scale-75"
               />
             </button>
-            <button className="w-10 h-10 2xl:w-10 2xl:h-10 lg:w-8 lg:h-8 sm:w-6 sm:h-6 rounded-full bg-[#35B091]">
+            <button className="w-10 h-10 2xl:w-10 2xl:h-10 lg:w-8 lg:h-8 sm:w-6 sm:h-6 rounded-full bg-[#35B091] hover:bg-[#3C3E4B] hover:scale-110 hover:transition-all">
               <img
                 src={facebook}
                 alt="Facebook Icon"
                 className="w-full h-full scale-50"
               />
             </button>
-            <button className="w-10 h-10 2xl:w-10 2xl:h-10 lg:w-8 lg:h-8 sm:w-6 sm:h-6 rounded-full bg-[#35B091]">
+            <button className="w-10 h-10 2xl:w-10 2xl:h-10 lg:w-8 lg:h-8 sm:w-6 sm:h-6 rounded-full bg-[#35B091] hover:bg-[#3C3E4B] hover:scale-110 hover:transition-all">
               <img
                 src={linkedin}
                 alt="LinkedIn Icon"
