@@ -58,7 +58,7 @@ function HeroSection() {
                   الادب الاتيني الكلاسيكي منذ العام 45 قبل الميلاد, مما يجعله
                   اكثر من 2000 عام في القدم
                 </h1>
-                <button className="bg-[#E64128] rounded-full px-4 py-1 text-center text-base text-white">
+                <button className="bg-[#E64128] rounded-full px-4 py-1 text-center text-base text-white hover:text-[#E64128] hover:bg-white hover:scale-110 hover:transition-all">
                   المزيد
                 </button>
               </div>
@@ -100,7 +100,7 @@ function HeroSection() {
                   الادب الاتيني الكلاسيكي منذ العام 45 قبل الميلاد, مما يجعله
                   اكثر من 2000 عام في القدم
                 </h1>
-                <button className="bg-[#E64128] rounded-full px-4 py-1 text-center text-base text-white">
+                <button className="bg-[#E64128] rounded-full px-4 py-1 text-center text-base text-white hover:text-[#E64128] hover:bg-white hover:scale-110 hover:transition-all">
                   المزيد
                 </button>
               </div>
@@ -142,7 +142,7 @@ function HeroSection() {
                   الادب الاتيني الكلاسيكي منذ العام 45 قبل الميلاد, مما يجعله
                   اكثر من 2000 عام في القدم
                 </h1>
-                <button className="bg-[#E64128] rounded-full px-4 py-1 text-center text-base text-white">
+                <button className="bg-[#E64128] rounded-full px-4 py-1 text-center text-base text-white hover:text-[#E64128] hover:bg-white hover:scale-110 hover:transition-all">
                   المزيد
                 </button>
               </div>
