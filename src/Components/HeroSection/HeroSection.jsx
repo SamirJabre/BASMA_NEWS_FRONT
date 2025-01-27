@@ -31,7 +31,7 @@ function HeroSection() {
   };
 
   return (
-    <section className="w-screen h-fit select-none sm:w-full">
+    <section className="w-full h-fit select-none sm:w-full">
       <Carousel
         autoPlay={false}
         swipeable={true}
