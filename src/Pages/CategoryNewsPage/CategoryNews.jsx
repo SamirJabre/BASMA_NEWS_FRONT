@@ -9,7 +9,6 @@ import axios from "axios";
 function CategoryNews() {
   const { id } = useParams();
   const language = useSelector((state) => state.auth.language);
-  console.log(language);
   const [newsData, setNewsData] = useState([
     {
       title: "",
@@ -31,7 +30,6 @@ function CategoryNews() {
           image: res.data.image,
           body: res.data.body,
         });
-        console.log(res.data);
       });
 
     // const data = JSON.stringify({
