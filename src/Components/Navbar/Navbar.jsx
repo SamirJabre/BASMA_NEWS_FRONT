@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav className="w-full h-[10%] flex justify-center items-center">
       <ul className="w-fit h-full flex justify-between items-center">
-      <Navigation placeholder={language === "ar" ? "اراء" : "Opinions"} border={false} />
+        <Navigation placeholder={language === "ar" ? "اراء" : "Opinions"} border={false} />
         <Navigation placeholder={language === "ar" ? "فيديو و صور" : "Videos and Photos"} border={true} />
         <Navigation placeholder={language === "ar" ? "ثقافة" : "Culture"} border={true} />
         <Navigation placeholder={language === "ar" ? "رياضة" : "Sport"} border={true} />

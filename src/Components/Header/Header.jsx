@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../Assets/Images/logo.png";
+import logo from "../../Assets/Images/logo2.png";
 import menu from "../../Assets/Icons/menu.svg";
 import close from "../../Assets/Icons/close.svg";
 import "./Header.css";
@@ -33,17 +33,18 @@ function Header() {
 
   const changeLang = () => {
     dispatch(changeLanguage(language === "ar" ? "en" : "ar"));
+    setIsSideNavVisible(false);
   };
 
   return (
-    <div className="w-full h-14 bg-white flex items-center justify-between px-4 shadow-lg sm:flex sm:items-end sm:justify-between sm:px-0 sm:h-32 sm:py-4 sm:shadow-none">
+    <div className="w-full h-14 bg-white flex items-center justify-between px-4 shadow-lg sm:flex sm:items-end sm:justify-between sm:px-0 sm:h-40 sm:py-4 sm:shadow-none">
       {width < 640 && (
         <>
           <button onClick={toggleSideNav}>
             <img src={menu} alt="Menu Icon" />
           </button>
           <div
-            className={`side_navigation_bar  ${
+            className={`side_navigation_bar   ${
               isSideNavVisible ? "visible" : ""
             }`}
           >
@@ -53,7 +54,7 @@ function Header() {
               </button>
             </div>
             <div className="left_side_nav">
-              <ul>
+              <ul className="font-cairo">
                 <li onClick={() => console.log("clicked")}>
                   <a id="home" className="menu-item" href="/">
                     {language === "ar" ? "الرئيسية" : "Home"}

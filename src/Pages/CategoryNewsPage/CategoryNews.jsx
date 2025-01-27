@@ -64,7 +64,7 @@ function CategoryNews() {
   return (
     <div className="w-full h-fit flex flex-col justify-start items-center bg-white sm:px-28 sm:rounded-xl">
       <Header />
-      <article className="bg-white w-full h-fit flex flex-col justify-start items-end p-5">
+      <article className="font-cairo bg-white w-full h-fit flex flex-col justify-start items-end p-5">
         <div
           className={`w-full h-fit flex  justify-between items-center mb-5 sm:mb-10`}
           onClick={() => navigate("/")}

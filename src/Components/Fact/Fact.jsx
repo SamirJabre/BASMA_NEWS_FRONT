@@ -22,7 +22,7 @@ function Fact({ language }) {
               : ""
           }`}
         >
-          <h1 className={`font-bold ${factShown ? " text-white" : "text-[#34AF90]"}`}>
+          <h1 className={`font-cairo font-bold ${factShown ? " text-white" : "text-[#34AF90]"}`}>
             {language === 'en' ? 'Click' : 'انقر'}
           </h1>
         </div>
@@ -54,7 +54,7 @@ function Fact({ language }) {
       >
         <div className="w-full h-full flex justify-end items-center px-5">
           <p
-            className={`text-[#B0B0B2] text-xs font-semibold ${
+            className={`text-[#B0B0B2] text-xs font-cairo font-semibold ${
               language === "ar" ? "text-right" : "text-left"
             }`}
           >

@@ -31,7 +31,7 @@ function HeroSection() {
   };
 
   return (
-    <section className="w-full h-fit select-none sm:w-full">
+    <section className="w-screen h-fit select-none sm:w-full">
       <Carousel
         autoPlay={false}
         swipeable={true}
@@ -39,17 +39,17 @@ function HeroSection() {
         showStatus={false}
         renderIndicator={customIndicator}
       >
-        <div className="bg-newsBackground bg-no-repeat bg-cover w-full h-[250px] py-12 flex items-end justify-center sm:h-[800px] sm:flex sm:flex-col sm:items-center sm:justify-between sm:py-0 sm:pb-10">
+        <div className="bg-background2 bg-no-repeat bg-cover w-full h-[250px] py-12 flex items-end justify-center sm:h-[800px] sm:flex sm:flex-col sm:items-center sm:justify-between sm:py-0 sm:pb-10">
           {width > 640 ? (
             <>
               <Navbar />
               <div className="w-full sm:px-7 md:px-10 lg:px-20 xl:px-28 2xl:px-32 flex flex-col sm:items-end sm:justify-between">
                 <div className="w-fit h-fit pb-2 pl-4 border-b">
-                <h1 className="text-white font-extrabold sm:text-[15px] md:text-[20px] lg:text-[30px] xl:text-[35px] 2xl:text-[45px] ">
+                <h1 className="font-messiri text-white font-extrabold sm:text-[15px] md:text-[20px] lg:text-[30px] xl:text-[35px] 2xl:text-[45px] ">
                   خلافا للاعتقاد
                 </h1>
                 </div>
-                <h1 className="sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl font-semibold text-right my-5 text-white w-full">
+                <h1 className=" sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl font-normal text-right my-5 text-white w-full">
                   لوريم ايبسوم ليس نصا عشوائيا, بل له جذور في الادب الاتيني
                   الكلاسيكي منذ العام 45 قبل الميلاد, مما يجعله اكثر من 2000 عام
                   في القدم لوريم ايبسوم ليس نصا عشوائيا, بل له جذور في الادب
@@ -66,7 +66,7 @@ function HeroSection() {
           ) : (
             <div className="w-full h-fit px-5 flex flex-col justify-evenly items-end">
               <div className="w-fit pl-2 h-7 border-b">
-                <h1 className="text-white font-bold">خلافا للاعتقاد</h1>
+                <h1 className="font-messiri text-white font-bold">خلافا للاعتقاد</h1>
               </div>
               <div className="h-fit w-full flex justify-between items-center">
                 <button className="bg-[#E64128] rounded-full px-2 text-sm text-white">
@@ -87,7 +87,7 @@ function HeroSection() {
               <Navbar />
               <div className="w-full px-32 flex flex-col sm:items-end sm:justify-between">
                 <div className="w-fit h-fit pb-2 border-b">
-                <h1 className="text-white font-extrabold sm:text-[15px] md:text-[20px] lg:text-[30px] xl:text-[35px] 2xl:text-[45px] ">
+                <h1 className="font-messiri text-white font-extrabold sm:text-[15px] md:text-[20px] lg:text-[30px] xl:text-[35px] 2xl:text-[45px] ">
                   خلافا للاعتقاد
                 </h1>
                 </div>

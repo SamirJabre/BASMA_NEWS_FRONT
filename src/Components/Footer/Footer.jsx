@@ -23,7 +23,7 @@ function Footer() {
       </div>
 
       <div className="w-full h-full sm:flex sm:flex-col sm:justify-between sm:items-end sm:w-1/2 sm:h-full sm:px-10">
-        <h1 className="hidden sm:flex text-[#3B3F4A] font-semibold 2xl:text-2xl xl:text-xl">
+        <h1 className="font-cairo hidden sm:flex text-[#3B3F4A] font-bold 2xl:text-2xl xl:text-xl">
           {language === "en" ? "Watch on Twitter" : "مشاهدة على تويتر"}
         </h1>
         <div className="w-full h-full flex flex-col justify-evenly items-center md:flex-col md:justify-evenly md:items-end xl:flex-row xl:justify-between xl:items-center ">
@@ -37,7 +37,7 @@ function Footer() {
               />
               <button
                 onClick={() => email && setShowRegisterForm(true)}
-                className="flex justify-center items-center font-semibold h-full w-[30%] bg-[#E74127] rounded-r-full text-white 2xl:text-lg 2xl:w-[30%] xl:text-base xl:w-[40%] md:text-xs sm:text-[5px] hover:bg-[#3C3E4B]  hover:transition-all duration-200"
+                className="font-cairo flex justify-center items-center font-semibold h-full w-[30%] bg-[#E74127] rounded-r-full text-white 2xl:text-lg 2xl:w-[30%] xl:text-base xl:w-[40%] md:text-xs sm:text-[5px] hover:bg-[#3C3E4B]  hover:transition-all duration-200"
               >
                 {language === "en" ? "Subscribe" : "الاشتراك"}
               </button>
